@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- node
+services:
+- postgresql
+before_script:
+- psql -c 'CREATE DATABASE travis_test;' -U postgres
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: dd6OMVocmQiGVrDhh3xI4AHDv5jffCKeMWusWJFMiLZ2+Gy3BvOnD1tPr89Tc6h9heHVn1jTQ1G8Cr9mDuKrF8VtVIVBGxtypNyn4ggRb6YWHKPbevIebyStcl1ufmbjTmrKDoXy1/uCf8ICAh/Qbu22HEA7qbR4HAM3rgXdf3xzvcY11LMKyAS4PE7/rpcpzLt2kntfHmDZWf3/S8EsClnsIB1Gt+75TT/AQFxYIeSE/1FPIMwH9T/y7fQB5fhzBhiOKANqkJAa+yCW7QsZoKBA7XKOwhoV5Z77SlBxQ1m7uf/ytJXuJ2EhfpNEJGuZK1DgNJ1j1l5MxRHYUNSKSckaWPhzrD6oxyxcrorMTJIMGj1T0k7HVdFwa69yGBu+yyo5VxPDBFghdC6Z+cPjaOkkpsYKQWU163aPG81bied/bAiPtqz9A7sRyo0wO9VVArDGiho33GBZkLUzKSOGQkLPcllegL9227wRataDJKvP2xHa7iUprTY+KlYIydhkHF48Twudn0iEIWFVgR3glbQW9XAsl/jQUQktR7enM5l0VGY7IsDnU8G4tdDpgl1qI1cEu6cjRqbQvie8/lcmGxDHH83AHl3rlyKrdPiH4OoyrwDk/DerdOqL6aMt78ubjVXa1s4RBtE+/cXnsDJ6TZApiaVIKrrePhj4wKpyTdM=
+  app: macraephoto
+skip_cleanup: true
