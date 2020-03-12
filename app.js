@@ -13,8 +13,6 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
-module.exports = app;
-
 app.post('/api/v1/messages', async (request, response) => {
   const data = request.body;
   for (let requiredParameter of ['email', 'body']) {
@@ -29,3 +27,5 @@ app.post('/api/v1/messages', async (request, response) => {
     response.status(500).json({ error });
   }
 });
+
+module.exports = app;
