@@ -28,4 +28,13 @@ app.post('/api/v1/messages', async (request, response) => {
   }
 });
 
+app.get('/api/v1/images', async (request, response) => {
+  try {
+    const images = await database('images').select();
+    response.status(200).json({images})
+  } catch (error) {
+    response.status(500).json({error})
+  }
+});
+
 module.exports = app;
