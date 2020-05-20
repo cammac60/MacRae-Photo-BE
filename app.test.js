@@ -30,4 +30,16 @@ describe('Server', () => {
 
   });
 
+  describe('GET /api/v1/images', () => {
+
+    it.skip('Should return a 200 status and the image objects', async () => {
+      const expectedImage = await database('images').select().first();
+      const response = await request(app).get('/api/v1/images');
+      const images = response.body;
+      expect(response.status).toBe(200, done);
+      expect(images.images[0].title).toEqual(expectedImage.title);
+    });
+
+  });
+
 });
