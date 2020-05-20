@@ -3,7 +3,7 @@ const imageData = require('../../../data.js');
 const fs = require('fs');
 
 const base64Encode = file => {
-    var bitmap = fs.readFileSync(file);
+    const bitmap = fs.readFileSync(file);
     return new Buffer(bitmap).toString('base64');
 };
 
@@ -20,7 +20,6 @@ const readFile = async (link) => {
 const createImage = async (knex, image) => {
   try {
     const bin = await readFile(image.link);
-    console.log(bin);
     const imageID = await knex('images').insert({
       title: image.title,
       location: image.location,
