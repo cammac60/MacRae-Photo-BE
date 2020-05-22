@@ -32,6 +32,7 @@ app.get('/api/v1/images', async (request, response) => {
   try {
     const images = await database('images').select();
     response.status(200).json({images})
+    // may need to set to base64 encoding instead of json
   } catch (error) {
     response.status(500).json({error})
   }
