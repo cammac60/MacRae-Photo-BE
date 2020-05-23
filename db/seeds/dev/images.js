@@ -8,9 +8,9 @@ const base64Encode = file => {
 };
 
 const readFile = async (link) => {
-  const url = (`/Users/cameronmacrae/side-projects/2020/macrae-photo-BE/images/main/${link}.JPG`);
   try {
     const data = await base64Encode(`/Users/cameronmacrae/side-projects/2020/macrae-photo-BE/images/main/${link}.JPG`);
+    console.log(data);
     return data;
   } catch (err) {
       console.log(`Error reading file: ${err}`)
