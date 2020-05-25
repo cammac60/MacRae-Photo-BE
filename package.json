@@ -2,11 +2,10 @@
   "name": "macraephoto",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "start": "node server.js",
+  "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test jest --forceExit",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
